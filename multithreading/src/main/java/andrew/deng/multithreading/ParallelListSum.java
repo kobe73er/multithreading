@@ -33,8 +33,6 @@ public class ParallelListSum {
 
 	private static class parallelSumTask extends RecursiveTask {
 
-		private final int THRSHOLD = 500;
-
 		private double[] list;
 
 		public parallelSumTask(double[] list) {
@@ -44,17 +42,11 @@ public class ParallelListSum {
 
 		@Override
 		protected Object compute() {
+			
+			new parallelSumTask(list).fork();
+			
+			return list;
 
-			if (list.length < THRSHOLD) {
-				double sum = 0;
-				for (int i = 0; i < list.length; i++) {
-					sum += list[i];
-				}
-			}
-
-			invokeAll();
-
-			return THRSHOLD;
 		}
 
 	}

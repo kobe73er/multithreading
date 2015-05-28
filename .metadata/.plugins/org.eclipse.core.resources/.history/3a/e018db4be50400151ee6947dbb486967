@@ -1,0 +1,37 @@
+package andrew.deng.multithreading.forkjoinpooltest;
+
+import java.util.List;
+import java.util.concurrent.RecursiveAction;
+
+public class FirstTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static double parallelSum(double[] list) {
+		return 0;
+
+	}
+
+	class ParallelSum extends RecursiveAction {
+		private List list[];
+		private final int THOLD = 1000;
+
+		public ParallelSum(List[] list) {
+			super();
+			this.list = list;
+		}
+
+		@Override
+		protected void compute() {
+			if (list.length < THOLD) {
+
+			}
+
+		}
+
+	}
+
+}

@@ -17,6 +17,14 @@ public class DeadLockDemo {
 	        ExecutorService executor = Executors.newFixedThreadPool(2);
 	        executor.execute(new WithDrawTask());
 	        executor.execute(new DepositTask());
+	        
+	        try {
+				executor.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				System.out.println("asdf");
+				e.printStackTrace();
+			}
 
 	        executor.shutdown();
 	    }

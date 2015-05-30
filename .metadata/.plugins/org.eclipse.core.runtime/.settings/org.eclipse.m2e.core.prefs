@@ -1,2 +1,4 @@
+eclipse.m2.debugOutput=true
 eclipse.m2.downloadSources=true
+eclipse.m2.updateProjects=true
 eclipse.preferences.version=1

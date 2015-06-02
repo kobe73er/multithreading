@@ -15,7 +15,7 @@ public class InterruptThreadGroup {
 		}
 		// Interrupt all methods in the same thread group as the main
 		// thread
-//		Thread.currentThread().getThreadGroup().interrupt();
+		Thread.currentThread().getThreadGroup().interrupt();
 	}
 }
 

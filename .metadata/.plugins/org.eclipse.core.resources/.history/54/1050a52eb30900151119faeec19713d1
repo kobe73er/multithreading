@@ -1,0 +1,10 @@
+package andrew.deng.relectiontest;
+
+public class Class_getDeclaredAnnotations
+{
+    public static void main(String[] args) throws Exception {
+        Annotation[] arr = LineNumberInputStream.class.getDeclaredAnnotations();
+        for (Annotation a : arr)
+            System.out.println("annotation : " + a.toString());
+    }
+}

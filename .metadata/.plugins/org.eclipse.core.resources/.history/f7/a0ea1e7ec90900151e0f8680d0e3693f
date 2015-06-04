@@ -1,0 +1,89 @@
+package andrew.deng.threadgroup;
+
+import java.io.IOException;
+
+public class TryToSuspendAllThread {
+
+	public static void main(String[] args) {
+		final Thread[] tlist = new Thread[50];
+		// TODO Auto-generated method stub
+		ThreadGroup threadGroupOne = new ThreadGroup("tg-one");
+		Thread threadOne = new Thread(threadGroupOne, "threadOne") {
+
+			@Override
+			public void run() {
+				while (true) {
+					System.out.println("threadOne is running...");
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+
+		};
+
+		threadOne.start();
+
+		ThreadGroup system = null;
+		ThreadGroup tg = Thread.currentThread().getThreadGroup();
+		while (tg != null) {
+			System.out.println("tg:" + tg);
+			system = tg;
+			tg = tg.getParent();
+		}
+		Thread threadForSystemThread = new Thread(system,
+				"threadForSystemThread") {
+
+			@Override
+			public void run() {
+				System.out
+						.println("thread for system thread waiting for input...");
+				try {
+					System.in.read();
+					for (int i = 0; i < tlist.length; i++) {
+						System.out.println("-- " + tlist[i]);
+						if (tlist[i] == Thread.currentThread()) {
+							continue;
+						}
+						tlist[i].resume();
+						System.out.println("thread resumed "
+								+ tlist[i].getName());
+					}
+
+				} catch (IOException e) {
+
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+		};
+		threadForSystemThread.start();
+//		while (tg != null) {
+//			System.out.println("tg:" + tg);
+//			system = tg;
+//			tg = tg.getParent();
+//		}
+
+		for (int i = 0; i < system.enumerate(tlist,true); i++) {
+			System.out.println("-- " + tlist[i]);
+			if (tlist[i] == threadForSystemThread) {
+				continue;
+			}
+			tlist[i].suspend();
+
+		}
+
+		// system.list();
+
+		//system.suspend();
+		// system.resume();
+
+		System.out.println("Current thread is " + Thread.currentThread());
+
+	}
+
+}

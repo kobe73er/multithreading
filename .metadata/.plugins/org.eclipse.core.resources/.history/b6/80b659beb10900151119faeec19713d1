@@ -1,0 +1,12 @@
+package andrew.deng.relectiontest;
+
+import java.lang.reflect.Constructor;
+
+public class Class_getConstructors
+{
+    public static void main(String[] args) throws Exception {
+        Constructor[] ctors = String.class.getConstructors();
+        for (Constructor ctor : ctors)
+            System.out.println("class : " + ctor.toGenericString());
+    }
+}

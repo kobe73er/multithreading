@@ -1,0 +1,11 @@
+package andrew.deng.relectiontest;
+
+import java.io.LineNumberInputStream;
+
+public class Class_getDeclaredAnnotation
+{
+    public static void main(String[] args) throws Exception {
+        Deprecated d = LineNumberInputStream.class.getDeclaredAnnotation(Deprecated.class);
+        System.out.println(" d : " + d.toString());
+    }
+}

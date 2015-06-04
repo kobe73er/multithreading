@@ -32,6 +32,8 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\git\github\testng"/>
+			<item value="C:\git\github\cloning"/>
 			<item value="C:\git\github\multithreading"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -54,6 +56,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\git\github\JavaUtilPackage"/>
+			<item value="C:\git\github\Clone"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -65,12 +69,16 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="andrew.deng.javautiltest"/>
+			<item value="andrew.deng.clone"/>
 			<item value="andrew.deng.multithreading"/>
 		</list>
 		<list key="groupId">
 			<item value="andrew.deng"/>
 		</list>
 		<list key="artifactId">
+			<item value="javautiltest"/>
+			<item value="clone"/>
 			<item value="multithreading"/>
 		</list>
 		<list key="projectNameTemplate">

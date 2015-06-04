@@ -1,0 +1,46 @@
+package andrew.deng.threadgroup;
+
+public class TryToSuspendAllThread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ThreadGroup threadGroupOne = new ThreadGroup("tg-one");
+		Thread threadOne = new Thread(threadGroupOne, "threadOne") {
+
+			@Override
+			public void run() {
+				while(true){
+				System.out.println("threadOne is running...");
+				}
+			}
+
+		};
+
+
+		threadOne.start();
+//				threadGroupOne.suspend();
+		
+		ThreadGroup system = null;
+		ThreadGroup tg = Thread.currentThread().getThreadGroup();
+		while (tg != null) {
+			System.out.println("tg:"+tg);
+			system = tg;
+			tg = tg.getParent();
+		}
+		
+		system.suspend();
+		
+
+
+//		ThreadGroup ins = Thread.currentThread().getThreadGroup();
+//		
+//		ins.suspend();
+//		ins.resume();
+
+		// ins.list();
+//		System.out.println("Active count is:" + ins.activeCount());
+		System.out.println("Current thread is "+ Thread.currentThread());
+
+	}
+
+}

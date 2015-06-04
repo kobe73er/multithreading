@@ -1,0 +1,72 @@
+package andrew.deng.relectiontest;
+
+import java.util.Arrays;
+
+public class Client {
+
+	Class<?> concreteClass = ConcreteClass.class;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Client ins = new Client();
+		ins.testOne();
+		ins.getDeclaredClazz();
+
+	}
+
+	public void getDeclaredClazz() {
+		try {
+			System.out.println("---------------------------------------");
+			Class<?> explicitClasses = Class
+					.forName("andrew.deng.relectiontest.ConcreteClass");
+			System.out.println(explicitClasses);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public void testOne() {
+		concreteClass = new ConcreteClass(5).getClass();
+
+		try {
+			concreteClass = Class
+					.forName("andrew.deng.relectiontest.ConcreteClass");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(concreteClass.getCanonicalName());
+
+		Class<?> booleanClass = boolean.class;
+
+		System.out.println(booleanClass.getCanonicalName());
+
+		Class<?> cDoubleArray = null;
+		try {
+			cDoubleArray = Class.forName("[D");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(cDoubleArray.getCanonicalName()); // prints double[]
+
+		Class<?> superClass;
+		try {
+			superClass = Class.forName(
+					"andrew.deng.relectiontest.ConcreteClass").getSuperclass();
+			System.out.println(superClass); // prints
+											// "class com.journaldev.reflection.BaseClass"
+			System.out.println(Object.class.getSuperclass()); // prints "null"
+			System.out.println(String[][].class.getSuperclass());// prints
+																	// "class java.lang.Object"
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

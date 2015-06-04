@@ -1,0 +1,9 @@
+package andrew.deng.relectiontest;
+
+public class Class_getDeclaredMethod
+{
+    public static void main(String[] args) throws Exception {
+        Method method = String.class.getDeclaredMethod("indexOf", int.class);
+        System.out.println("method  : " + method.toString());
+    }
+}

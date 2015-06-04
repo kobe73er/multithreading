@@ -1,0 +1,12 @@
+package andrew.deng.relectiontest;
+
+import java.lang.reflect.Type;
+
+public class Class_getGenericInterfaces
+{
+    public static void main(String[] args) throws Exception {
+        Type[] types = Class.forName("java.lang.Double").getGenericInterfaces();
+        for (Type type : types)
+            System.out.println("type : " + type);
+    }
+}

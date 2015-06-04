@@ -1,0 +1,10 @@
+package andrew.deng.relectiontest;
+
+public class Class_isAssignableFrom
+{
+    public static void main(String[] args) throws Exception {
+        Class numberCls = Class.forName("java.lang.Number");
+        Class floatCls = Class.forName("java.lang.Float");
+        System.out.println("number isAssignableFrom float : " + numberCls.isAssignableFrom(floatCls));
+    }
+}

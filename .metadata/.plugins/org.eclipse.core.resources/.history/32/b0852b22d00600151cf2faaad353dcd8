@@ -1,0 +1,23 @@
+package andrew.deng.threadgroup;
+
+public class TryToSuspendAllThread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ThreadGroup threadGroupOne=new ThreadGroup("tg-one");
+		Thread threadOne=new Thread(threadGroupOne,"threadOne");
+		Thread threadTwo=new Thread(threadGroupOne,"threadTne");
+		
+		threadOne.start();
+		threadTwo.start();
+		
+		
+		ThreadGroup ins=Thread.currentThread().getThreadGroup();
+		
+//		ins.list();
+		System.out.println(ins.activeCount());
+		
+
+	}
+
+}

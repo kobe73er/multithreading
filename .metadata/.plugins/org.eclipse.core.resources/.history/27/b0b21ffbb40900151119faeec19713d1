@@ -1,0 +1,9 @@
+package andrew.deng.relectiontest;
+
+public class Class_isInstance
+{
+    public static void main(String[] args) throws Exception {
+        Class cls = Class.forName("java.lang.Number");
+        System.out.println("isInstance : " + cls.isInstance(123));
+    }
+}

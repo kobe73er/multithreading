@@ -1,0 +1,10 @@
+package andrew.deng.relectiontest;
+
+public class Class_getDeclaredMethods
+{
+    public static void main(String[] args) throws Exception {
+        Method[] methods = Class.forName("java.lang.String").getDeclaredMethods();
+        for (Method method : methods)
+            System.out.println("method : " + method.toString());
+    }
+}

@@ -7,6 +7,7 @@ public class EnumThreads {
 		ThreadGroup system = null;
 		ThreadGroup tg = Thread.currentThread().getThreadGroup();
 		while (tg != null) {
+			System.out.println("tg:"+tg);
 			system = tg;
 			tg = tg.getParent();
 		}

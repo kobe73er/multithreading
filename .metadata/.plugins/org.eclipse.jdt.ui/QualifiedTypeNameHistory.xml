@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="java.util.concurrent.CyclicBarrier"/>
 <fullyQualifiedTypeName name="java.util.concurrent.RecursiveAction"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ForkJoinPool"/>
-<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -18,5 +17,23 @@
 <fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Future"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ExecutionException"/>
+<fullyQualifiedTypeName name="com.rits.cloning.IFreezable"/>
+<fullyQualifiedTypeName name="com.rits.cloning.IFastCloner"/>
+<fullyQualifiedTypeName name="com.rits.cloning.IInstantiationStrategy"/>
+<fullyQualifiedTypeName name="com.rits.cloning.IDumpCloned"/>
+<fullyQualifiedTypeName name="com.rits.cloning.ObjenesisInstantiationStrategy"/>
+<fullyQualifiedTypeName name="com.rits.cloning.IDeepCloner"/>
+<fullyQualifiedTypeName name="com.rits.cloning.FastClonerArrayList"/>
+<fullyQualifiedTypeName name="com.rits.cloning.FastClonerCalendar"/>
+<fullyQualifiedTypeName name="com.rits.cloning.FastClonerLinkedList"/>
+<fullyQualifiedTypeName name="com.rits.cloning.FastClonerHashSet"/>
+<fullyQualifiedTypeName name="com.rits.cloning.FastClonerHashMap"/>
+<fullyQualifiedTypeName name="com.rits.cloning.FastClonerTreeMap"/>
+<fullyQualifiedTypeName name="com.rits.cloning.FastClonerConcurrentHashMap"/>
+<fullyQualifiedTypeName name="com.rits.cloning.CloningException"/>
+<fullyQualifiedTypeName name="com.rits.cloning.Immutable"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ThreadFactory"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
 </qualifiedTypeNameHistroy>

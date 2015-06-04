@@ -1,0 +1,27 @@
+package andrew.deng.annotationtest;
+
+public class TestExample {
+
+	@Test
+	void testA() {
+		if (true)
+			System.out.println("Ignored test");
+			throw new RuntimeException("This test always failed");
+	}
+
+	@Test(enabled = false)
+	void testB() {
+		if (false)
+			System.out.println("not enabled test");
+			throw new RuntimeException("This test always passed");
+	}
+
+	@Test(enabled = true)
+	void testC() {
+		System.out.println("enabled test");
+		if (10 > 1) {
+			// do nothing, this test always passed.
+		}
+	}
+
+}

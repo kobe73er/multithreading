@@ -54,8 +54,28 @@
 			<item value="[groupId].[artifactId]-[version]"/>
 		</list>
 	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="andrew.deng"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="tij-util"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\git\github\ThingInJava\tij-util"/>
+			<item value="C:\git\github\ThingInJava\util\tij-util"/>
+			<item value="C:\git\github\ThingInJava\utils"/>
+			<item value="C:\git\github\ThingInJava"/>
+			<item value="C:\git\github\tij-util"/>
+			<item value="C:\git\github\ThingInJava\ThinkingInJavaReusingClass"/>
+			<item value="C:\git\github\annotation\annotationtest"/>
 			<item value="C:\git\github\JavaUtilPackage"/>
 			<item value="C:\git\github\Clone"/>
 		</list>
@@ -69,17 +89,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="andrew.deng.javautiltest"/>
-			<item value="andrew.deng.clone"/>
-			<item value="andrew.deng.multithreading"/>
+			<item value="andrew.deng.util"/>
 		</list>
 		<list key="groupId">
 			<item value="andrew.deng"/>
 		</list>
 		<list key="artifactId">
-			<item value="javautiltest"/>
-			<item value="clone"/>
-			<item value="multithreading"/>
+			<item value="util"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

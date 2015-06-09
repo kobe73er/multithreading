@@ -1,0 +1,64 @@
+package andrew.deng.tij_resuingclass;
+
+
+/**
+Copyright (C) 2012 . see<http://mysources.sourceforge.net />
+
+This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses />.
+*/
+
+
+import java.io.PrintStream;
+
+/**
+* 输出信息到控制台
+*
+* @author Lucky Yang
+* @since 1.0.0
+*/
+public class Print {
+ /**
+  * 打印对象，换行
+  * @param obj
+  */
+ public static void print(Object obj){
+     System.out.println(obj);
+ }
+ 
+ /**
+  * 打印空行，换行
+  */
+ public static void print(){
+     System.out.println();
+ }
+ 
+ /**
+  * 打印对象，不换行
+  * @param obj
+  */
+ public static void printnb(Object obj){
+     System.out.print(obj);
+ }   
+ 
+ /**
+  * 格式化打印（参考C语言）
+  * 
+  * @param format
+  * @param args
+  * @return
+  */
+ public static PrintStream printf(String format, Object... args){
+     return System.out.printf(format, args);
+ }
+}

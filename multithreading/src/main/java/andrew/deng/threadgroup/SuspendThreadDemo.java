@@ -5,18 +5,17 @@ package andrew.deng.threadgroup;
 import javax.swing.JOptionPane;
 
 public class SuspendThreadDemo {
-
     public static void main(String[] args) {
         final ThreadGroup systemGroup = getSystemThreadGroup();
-        new Thread(systemGroup, new Runnable() {
 
+        new Thread(systemGroup, new Runnable() {
             @Override
             public void run() {
-                Thread userInputThread = null;
-                final ThreadGroup[] tgLst = new ThreadGroup[systemGroup.activeGroupCount()];
-                final Thread[] tLst = new Thread[systemGroup.activeCount()];
-                final int systemGroupThreadLstLength = systemGroup.enumerate(tLst, false);
-                int systemGroupGroupLstLength = systemGroup.enumerate(tgLst, false);
+                Thread              userInputThread            = null;
+                final ThreadGroup[] tgLst                      = new ThreadGroup[systemGroup.activeGroupCount()];
+                final Thread[]      tLst                       = new Thread[systemGroup.activeCount()];
+                final int           systemGroupThreadLstLength = systemGroup.enumerate(tLst, false);
+                int                 systemGroupGroupLstLength  = systemGroup.enumerate(tgLst, false);
 
                 System.out.println("------------------Thread under system group----------------------");
 
@@ -25,13 +24,11 @@ public class SuspendThreadDemo {
 
                     if (tLst[i] == Thread.currentThread()) {
                         userInputThread = new Thread(new Runnable() {
-
                             @SuppressWarnings("deprecation")
                             @Override
                             public void run() {
                                 int n = JOptionPane.showConfirmDialog(null, "continue running?", null,
-                                        JOptionPane.YES_NO_OPTION);
-
+                                            JOptionPane.YES_NO_OPTION);
                                 if (n == JOptionPane.OK_OPTION) {
                                     for (int i = 0; i < systemGroupThreadLstLength; i++) {
                                         System.out.println("deep run: " + tLst[i]);
@@ -63,11 +60,11 @@ public class SuspendThreadDemo {
                 System.out.println("-------------------Current live threads total------------------------------");
                 System.out.println(systemGroup.activeCount());
                 System.out.println(
-                        "-------------------Current live threads state in system group------------------------------");
+                    "-------------------Current live threads state in system group------------------------------");
 
                 for (int i = 0; i < systemGroupThreadLstLength; i++) {
                     System.out.println("tLst[" + i + "]'s [" + tLst[i].getName() + "]" + "state is: "
-                            + tLst[i].getState());
+                                       + tLst[i].getState());
                 }
 
                 if (null != userInputThread) {
@@ -77,44 +74,14 @@ public class SuspendThreadDemo {
                 System.out.println("-------------------------------------------------");
             }
         }, "threadUnderSystem").start();
-        
-        
-        
-
-        //        new Thread(systemGroup, new Runnable() {
-        //            @Override
-        //            public void run() {
-        //
-        //                // ScheduledExecutorService scheduledPool = Executors.newScheduledThreadPool(1);
-        //                // scheduledPool.scheduleWithFixedDelay(periodPauseTask, 0, 3000, TimeUnit.SECONDS);
-        //                while (true) {
-        //                    if (periodPauseTask.isAlive()) {
-        //                        try {
-        //                            Thread.sleep(3000);
-        //
-        //                            continue;
-        //                        } catch (InterruptedException e) {
-        //
-        //                            // TODO Auto-generated catch block
-        //                            e.printStackTrace();
-        //                        }
-        //                    }
-        //
-        //                    System.out.println("isAlive(): " + periodPauseTask.isAlive());
-        //                    System.out.println("getState():" + periodPauseTask.getState());
-        //                    periodPauseTask.start();
-        //                }
-        //            }
-        //        }, "tictok").start();
 
         // This thread is under main thread group
         new Thread(new Runnable() {
-
             @Override
             public void run() {
                 while (true) {
                     System.out.println(
-                            "----------------printSignalThread under main group begin---------------------------");
+                        "----------------printSignalThread under main group begin---------------------------");
                     System.out.println("I am printing thread under main ThreadGroup...");
 
                     try {
@@ -126,7 +93,6 @@ public class SuspendThreadDemo {
             }
         }, "printSignalThread").start();
         new Thread(new Runnable() {
-
             @Override
             public void run() {
                 while (true) {
@@ -145,15 +111,16 @@ public class SuspendThreadDemo {
 
     public static ThreadGroup getSystemThreadGroup() {
         ThreadGroup system = null;
-        ThreadGroup tg = Thread.currentThread().getThreadGroup();
+        ThreadGroup tg     = Thread.currentThread().getThreadGroup();
 
         while (tg != null) {
             system = tg;
-            tg = tg.getParent();
+            tg     = tg.getParent();
         }
 
         return system;
     }
 }
+
 
 //~ Formatted by Jindent --- http://www.jindent.com

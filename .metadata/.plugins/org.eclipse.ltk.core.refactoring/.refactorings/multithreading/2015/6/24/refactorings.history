@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;andrew.deng.automatictest&apos; to &apos;andrew.deng.atomicintegertest&apos;&#x0D;&#x0A;- Original project: &apos;multithreading&apos;&#x0D;&#x0A;- Original element: &apos;multithreading/src/main/java/andrew.deng.automatictest&apos;&#x0D;&#x0A;- Renamed element: &apos;multithreading/src/main/java/andrew.deng.atomicintegertest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;andrew.deng.automatictest&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;andrew.deng.automatictest" name="andrew.deng.atomicintegertest" qualified="false" references="true" stamp="1433819937497" textual="false" version="1.0"/>
+</session>
